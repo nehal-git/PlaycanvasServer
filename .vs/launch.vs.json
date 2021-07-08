@@ -1,0 +1,12 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "nodeDbg",
+      "name": "multiplayer-app-game.njsproj",
+      "project": "multiplayer-app-game.njsproj",
+      "projectTarget": ""
+    }
+  ]
+}

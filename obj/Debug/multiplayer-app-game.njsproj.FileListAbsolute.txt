@@ -1,0 +1,2 @@
+D:\NehalOfficeWork\Personal Docs\Doc\Developement\PlaycanvasServer\Server\obj\Debug\multiplayer-app-game.njsproj.CoreCompileInputs.cache
+D:\NehalOfficeWork\Personal Docs\Doc\Developement\PlaycanvasServer\Server\bin\Microsoft.NodejsTools.WebRole.dll
