@@ -12,7 +12,7 @@ const io = new Server(server, {
   }
 });
 
-
+const PORT = process.env.PORT || 3000;
 
 var Player = require('./Player.js');
 var players = [];
@@ -108,4 +108,6 @@ io.on('connection', function (socket) {
 });
 
 console.log('Server started');
-server.listen(3000);
+server.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server started on port ${PORT}`);
+});
