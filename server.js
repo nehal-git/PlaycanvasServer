@@ -1,6 +1,8 @@
 var server = require('http').createServer();
 var options = {
-    cors: true
+   cors: {
+    origin: "*"
+  }
 }
 
 var io = require('socket.io')(server, options);
