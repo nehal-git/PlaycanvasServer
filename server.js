@@ -5,7 +5,15 @@ var options = {
   }
 }
 
-var io = require('socket.io')(server, options);
+var io = require('socket.io')(server, {
+    cors: {
+        origin: "*",                 // allow all origins (for testing)
+        methods: ["GET", "POST"],
+        allowedHeaders: ["*"],
+        credentials: true
+    }
+}
+);
 
 
 
