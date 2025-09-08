@@ -1,19 +1,16 @@
-var server = require('http').createServer();
-var options = {
-   cors: {
-    origin: "*"
-  }
-}
+const http = require("http");
+const { Server } = require("socket.io");
 
-var io = require('socket.io')(server, {
-    cors: {
-        origin: "*",                 // allow all origins (for testing)
-        methods: ["GET", "POST"],
-        allowedHeaders: ["*"],
-        credentials: true
-    }
-}
-);
+const server = http.createServer();
+
+const io = new Server(server, {
+  cors: {
+    origin: "*",             // allow all origins
+    methods: ["GET", "POST"],
+    allowedHeaders: ["*"],
+    credentials: true
+  }
+});
 
 
 
