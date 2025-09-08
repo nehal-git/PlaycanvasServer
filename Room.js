@@ -4,8 +4,5 @@ module.exports = class Room {
 		this.roomID = roomID;
 		this.playerid = playerid;
 		this.count = count;
-
 	}
-
-
 }

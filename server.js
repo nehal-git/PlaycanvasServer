@@ -42,11 +42,7 @@ io.on('connection', function (socket) {
             if (playerID != thisPlayerID) {
                 socket.emit('spawn', players[playerID])
             }
-
-
-
         }
-
     })
     
 
@@ -55,14 +51,17 @@ io.on('connection', function (socket) {
         socket.broadcast.emit('anim', {
             id: data.id,
             direction: data.direction
-                
-
-
         })
-
-
-
     })
+
+    socket.on("anim", function (data) {
+        // console.log(data);
+        socket.broadcast.emit("anim", {
+        id: data.id,
+        direction: data.direction,
+        });
+    });
+    
     socket.on('transform', function (data) {
         var id = data.id;
         var pos = data.pos;
@@ -73,8 +72,22 @@ io.on('connection', function (socket) {
             pos: pos,
             rot: rot
         })
-
     })
+
+    socket.on("onsendmsg",function(data){
+     //console.log(data);
+    var uname = data.username;
+    var ctext = data.chatText;
+    // console.log(pos);
+    socket.broadcast.emit("recmsg", {
+    username: data.username,
+    text: data.chatText,
+    });
+    socket.emit("recmsg", {
+    username: data.username,
+    text: data.chatText,
+    });
+    });
 
 
     socket.on('disconnect', function () {
